@@ -1,0 +1,94 @@
+:root {
+  /* --- Color tokens: "signal room" palette --- */
+  --ink: #0d1117;
+  --surface: #141b23;
+  --surface-2: #1b232d;
+  --border: #262f3a;
+  --text-primary: #e8edf2;
+  --text-muted: #8a96a3;
+
+  --positive: #3ecf8e;
+  --negative: #f2555a;
+  --neutral: #f2b84b;
+  --pulse: #7c5cfc;
+
+  --positive-dim: rgba(62, 207, 142, 0.12);
+  --negative-dim: rgba(242, 85, 90, 0.12);
+  --neutral-dim: rgba(242, 184, 75, 0.12);
+  --pulse-dim: rgba(124, 92, 252, 0.14);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--pulse-dim);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 var(--pulse-dim);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(124, 92, 252, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 92, 252, 0);
+  }
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

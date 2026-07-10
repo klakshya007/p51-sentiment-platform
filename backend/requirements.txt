@@ -1,0 +1,18 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+gunicorn==23.0.0
+pydantic==2.9.2
+pydantic-settings==2.5.2
+sqlalchemy==2.0.35
+httpx==0.27.2
+apscheduler==3.10.4
+transformers==4.44.2
+torch
+python-dotenv==1.0.1
+
+# Optional (only needed if USE_AZURE_AI_LANGUAGE=true)
+azure-ai-textanalytics==5.3.0
+azure-core==1.31.0
+
+# Optional (only needed if USE_COSMOS=true — see services/cosmos_service.py)
+azure-cosmos==4.7.0
